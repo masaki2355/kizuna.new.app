@@ -13,3 +13,8 @@ html
       .navbar-brand KIZUNA
     .container
     = yield
+
+  .container
+    - if flash.notice.present?
+      .alert.alert-success= flash.notice
+    = yield
