@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
   def index
+    @schoolname = current_user.schoolname
+    @tweets = Tweet.all.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def show
